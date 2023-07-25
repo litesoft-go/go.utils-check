@@ -1,9 +1,11 @@
-package check
+package go_utils_check
 
 import (
 	"errors"
 	"reflect"
 )
+
+var TestIndent = "             "
 
 func IsNil(it any) bool {
 	if it == nil {

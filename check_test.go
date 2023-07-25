@@ -1,4 +1,4 @@
-package check
+package go_utils_check
 
 import (
 	"fmt"
@@ -18,8 +18,8 @@ type TestInterface interface {
 
 func Test_IsNil(t *testing.T) {
 	var testInterface TestInterface = nil
-	fmt.Println("testInterface==nil ->", testInterface != nil, "Direct")
-	fmt.Println("testInterface==nil ->", IsNil(testInterface), "isNil")
+	fmt.Println(TestIndent, "testInterface==nil ->", testInterface != nil, "Direct")
+	fmt.Println(TestIndent, "testInterface==nil ->", IsNil(testInterface), "isNil")
 	tests := []struct {
 		name string
 		arg  any
@@ -63,7 +63,7 @@ func Test_StringVisibleAsciiOrNonAsciiUTF8(t *testing.T) {
 				return
 			}
 			if err != nil {
-				fmt.Println("    error:", tt.name, "--", err)
+				fmt.Println(TestIndent, "expected error:", tt.name, "--", err)
 			}
 		})
 	}
